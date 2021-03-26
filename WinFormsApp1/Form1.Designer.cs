@@ -99,15 +99,14 @@ namespace WinFormsApp1
             // 
             // panelSide
             // 
-            this.panelSide.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.panelSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.panelSide.Controls.Add(this.buttonSubs);
             this.panelSide.Controls.Add(this.buttonExplore);
             this.panelSide.Controls.Add(this.buttonHome);
+            this.panelSide.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSide.Location = new System.Drawing.Point(0, 64);
             this.panelSide.Name = "panelSide";
-            this.panelSide.Size = new System.Drawing.Size(240, 613);
+            this.panelSide.Size = new System.Drawing.Size(240, 611);
             this.panelSide.TabIndex = 1;
             // 
             // buttonSubs
@@ -123,7 +122,7 @@ namespace WinFormsApp1
             this.buttonSubs.Name = "buttonSubs";
             this.buttonSubs.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.buttonSubs.Size = new System.Drawing.Size(240, 47);
-            this.buttonSubs.TabIndex = 0;
+            this.buttonSubs.TabIndex = 1;
             this.buttonSubs.Text = "     Subscriptions";
             this.buttonSubs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonSubs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -142,7 +141,7 @@ namespace WinFormsApp1
             this.buttonExplore.Name = "buttonExplore";
             this.buttonExplore.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.buttonExplore.Size = new System.Drawing.Size(240, 47);
-            this.buttonExplore.TabIndex = 0;
+            this.buttonExplore.TabIndex = 2;
             this.buttonExplore.Text = "    Explore";
             this.buttonExplore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonExplore.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -161,23 +160,20 @@ namespace WinFormsApp1
             this.buttonHome.Name = "buttonHome";
             this.buttonHome.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.buttonHome.Size = new System.Drawing.Size(240, 47);
-            this.buttonHome.TabIndex = 0;
+            this.buttonHome.TabIndex = 3;
             this.buttonHome.Text = "     Home";
             this.buttonHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonHome.UseVisualStyleBackColor = true;
-            this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
             // 
             // panelMain
             // 
-            this.panelMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelMain.AutoScroll = true;
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(240, 64);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1126, 613);
-            this.panelMain.TabIndex = 2;
+            this.panelMain.Size = new System.Drawing.Size(1126, 611);
+            this.panelMain.TabIndex = 3;
             // 
             // Form1
             // 
@@ -201,13 +197,13 @@ namespace WinFormsApp1
 
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Panel panelSide;
-        private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button buttonIcon;
         private System.Windows.Forms.Button buttonHamburguer;
         private System.Windows.Forms.Button buttonSubs;
         private System.Windows.Forms.Button buttonExplore;
         private System.Windows.Forms.Button buttonHome;
+        private System.Windows.Forms.Panel panelMain;
     }
 }
 

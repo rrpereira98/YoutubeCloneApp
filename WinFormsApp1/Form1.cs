@@ -12,22 +12,24 @@ namespace WinFormsApp1
 {
     public partial class Form1 : Form
     {
+        List<VideoModel> allVideos = new List<VideoModel>();
+
         Point location = new Point(40, 40);
-        int margin = 242;
 
         public Form1()
         {
             InitializeComponent();
+            CreateVideos();
             LoadVideos();
         }
 
         private void LoadVideos()
         {
-            for (int i = 0; i < 12; i++)
+            for (int i = 0; i < allVideos.Count; i++)
             {
-
                 Button videoBtn = new Button();
-                videoBtn.Image = Properties.Resources.Untitled_11;
+                videoBtn.Tag = i;
+                videoBtn.Image = allVideos[i].Thumbnail;
                 panelMain.Controls.Add(videoBtn);
                 videoBtn.Size = new Size(252, 162);
                 videoBtn.MaximumSize = new Size(252, 162);
@@ -45,7 +47,7 @@ namespace WinFormsApp1
                 videoBtn.FlatAppearance.BorderSize = 0;
 
                 videoBtn.TextImageRelation = TextImageRelation.Overlay;
-                videoBtn.Text = "Video " + i.ToString();
+                videoBtn.Text = allVideos[i].Name;
                 videoBtn.ForeColor = Color.White;
                 videoBtn.ImageAlign = ContentAlignment.TopCenter;
                 videoBtn.TextAlign = ContentAlignment.BottomCenter;
@@ -53,7 +55,33 @@ namespace WinFormsApp1
                 videoBtn.Show();
 
                 location = new Point(videoBtn.Location.X + 276, videoBtn.Location.Y);
+
+                videoBtn.Click += new EventHandler(videoButton_Click);
             }
+        }
+
+        private void videoButton_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+
+            if (panelSide.Width == 240)
+            {
+                panelSide.Width = 80;
+
+                buttonHome.Text = "";
+                buttonHome.ImageAlign = ContentAlignment.MiddleCenter;
+                buttonHome.Padding = new System.Windows.Forms.Padding(0);
+
+                buttonExplore.Text = "";
+                buttonExplore.ImageAlign = ContentAlignment.MiddleCenter;
+                buttonExplore.Padding = new System.Windows.Forms.Padding(0);
+
+                buttonSubs.Text = "";
+                buttonSubs.ImageAlign = ContentAlignment.MiddleCenter;
+                buttonSubs.Padding = new System.Windows.Forms.Padding(0);
+            }
+
+            OpenForm(new Video(allVideos[int.Parse(btn.Tag.ToString())]));
         }
 
         private void buttonHamburguer_Click(object sender, EventArgs e)
@@ -119,6 +147,15 @@ namespace WinFormsApp1
 
             form.BringToFront();
             form.Show();
+        }
+
+        private void CreateVideos()
+        {
+            for (int i = 0; i < 12; i++)
+            {
+                VideoModel video = new VideoModel("video " + (i + 1), Properties.Resources.Waste, Properties.Resources.Untitled_11);
+                allVideos.Add(video);
+            }
         }
     }
 }

@@ -38,3 +38,4 @@ C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\YoutubeCloneApp\WinForm
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\YoutubeCloneApp\WinFormsApp1\obj\Debug\net5.0-windows\ref\WinFormsApp1.dll
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\YoutubeCloneApp\WinFormsApp1\obj\Debug\net5.0-windows\WinFormsApp1.pdb
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\YoutubeCloneApp\WinFormsApp1\obj\Debug\net5.0-windows\WinFormsApp1.genruntimeconfig.cache
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\projects\c#\YoutubeCloneApp\WinFormsApp1\obj\Debug\net5.0-windows\WinFormsApp1.Video.resources
